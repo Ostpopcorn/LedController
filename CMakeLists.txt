@@ -11,7 +11,7 @@ else()
     set(CMAKE_CXX_STANDARD 17)
 
 
-    add_library(led_control_lib STATIC src/led.cpp include/led.h)
+    add_library(led_control_lib STATIC src/Coordinate.cpp include/Coordinate.h src/Led.cpp include/Led.h)
     add_executable(led_control main.cpp )
     add_executable(tests_setup tests.cpp tests.cpp)
     target_link_libraries(led_control led_control_lib)
