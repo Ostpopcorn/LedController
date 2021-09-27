@@ -1,11 +1,6 @@
 #include <cmath>
 #include "../include/Coordinate.h"
 
-void Coordinate::calculate_polar() {
-    r = hypotf(x, y);
-    theta = atan2f(y, x);
-}
-
 float Coordinate::getX() const {
     return x;
 }
@@ -15,20 +10,23 @@ float Coordinate::getY() const {
 }
 
 float Coordinate::getTheta() const {
-    return theta;
+    return atan2f(y, x);
 }
 
 float Coordinate::getR() const {
-    return r;
+    return hypotf(x, y);
 }
 
 Coordinate::Coordinate() {}
 
 Coordinate::Coordinate(float x, float y) : x(x), y(y) {
-    calculate_polar();
 }
 
 Coordinate Coordinate::calculate_relative(Coordinate origin) const {
+    return (*this) - origin;
+}
+
+Coordinate Coordinate::calculate_relative(const Coordinate &origin) const {
     return (*this) - origin;
 }
 

@@ -20,6 +20,8 @@ public:
 
     Coordinate calculate_relative(Coordinate origin) const;
 
+    Coordinate calculate_relative(const Coordinate &origin) const;
+
     bool operator==(const Coordinate &rhs) const;
 
     bool operator!=(const Coordinate &rhs) const;
@@ -32,10 +34,6 @@ private:
     float x{0.0};
     float y{0.0};
 
-    void calculate_polar();
-
-    float theta{0.0};
-    float r{0.0};
 
 };
 
