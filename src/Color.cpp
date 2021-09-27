@@ -14,6 +14,26 @@ void ColorSingle<color_value_type>::setColor(color_value_type input_color) {
     }
 }
 
+template<typename color_value_type>
+color_value_type ColorSingle<color_value_type>::getColor() const {
+    return color;
+}
+
+template<typename color_value_type>
+color_value_type ColorRGB<color_value_type>::getRed() const {
+    return red;
+}
+
+template<typename color_value_type>
+color_value_type ColorRGB<color_value_type>::getGreen() const {
+    return green;
+}
+
+template<typename color_value_type>
+color_value_type ColorRGB<color_value_type>::getBlue() const {
+    return blue;
+}
+
 template<typename led_value_type>
 void ColorRGB<led_value_type>::setRed(led_value_type input_red) {
     if (isValidLedValue(input_red)) {

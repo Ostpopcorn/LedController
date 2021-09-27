@@ -11,7 +11,10 @@ protected:
 template<typename color_value_type>
 class ColorSingle : public ColorBase<color_value_type> {
 
+public:
     void setColor(color_value_type input_color);
+
+    color_value_type getColor() const;
 
 private:
     color_value_type color{};
@@ -26,6 +29,12 @@ public:
     ColorRGB(color_value_type red, color_value_type green, color_value_type blue);
 
     void setColor(color_value_type input_red, color_value_type input_green, color_value_type input_blue);
+
+    color_value_type getRed() const;
+
+    color_value_type getGreen() const;
+
+    color_value_type getBlue() const;
 
     void setRed(color_value_type input_red);
 
