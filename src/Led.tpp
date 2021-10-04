@@ -19,3 +19,13 @@ template<typename color_value_type>
 LedRGB<color_value_type>::LedRGB(Coordinate &&coordinate):Led(coordinate) {
 
 }
+
+template<typename color_value_type>
+const ColorRGB<color_value_type> &LedRGB<color_value_type>::getColor() const {
+    return color;
+}
+
+template<typename color_value_type>
+void LedRGB<color_value_type>::setColor(const ColorRGB<color_value_type> &color) {
+    LedRGB::color = color;
+}

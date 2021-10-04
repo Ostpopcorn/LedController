@@ -6,10 +6,11 @@
 
 template<typename color_value_type>
 class ColorBase {
-protected:
-
+public:
     static bool isValidLedValue(color_value_type value);
 
+    static inline color_value_type maxLedValue{std::numeric_limits<color_value_type>::max()};
+    static inline color_value_type minLedValue{0};
 };
 
 template<typename color_value_type>
@@ -25,7 +26,7 @@ public:
 
 private:
     // initialize with maximum possible value so stating value is opaque
-    color_value_type alpha{std::numeric_limits<color_value_type>::max()};
+    color_value_type alpha{ColorBase<color_value_type>::maxLedValue};
 };
 
 
@@ -39,7 +40,7 @@ public:
 
 private:
     // initialize with maximum possible value
-    color_value_type color{std::numeric_limits<color_value_type>::max()};
+    color_value_type color{ColorBase<color_value_type>::maxLedValue};
 };
 
 
@@ -66,9 +67,9 @@ public:
 
 private:
     // initialize with maximum possible value so stating color is white
-    color_value_type red{std::numeric_limits<color_value_type>::max()};
-    color_value_type green{std::numeric_limits<color_value_type>::max()};
-    color_value_type blue{std::numeric_limits<color_value_type>::max()};
+    color_value_type red{ColorBase<color_value_type>::maxLedValue};
+    color_value_type green{ColorBase<color_value_type>::maxLedValue};
+    color_value_type blue{ColorBase<color_value_type>::maxLedValue};
 };
 
 template<typename color_value_type>

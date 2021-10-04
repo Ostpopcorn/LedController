@@ -21,6 +21,6 @@ ColorRGBA<color_value_type>::ColorRGBA(ColorRGB<color_value_type> &&rhs) {
     this->setRed(rhs.getRed());
     this->setGreen(rhs.getGreen());
     this->setBlue(rhs.getBlue());
-    this->setAlpha(std::numeric_limits<color_value_type>::max());
+    this->setAlpha(ColorBase<color_value_type>::maxLedValue);
 
 }

@@ -25,6 +25,10 @@ public:
 
     LedRGB(const Coordinate &coordinate);
 
+    void setColor(const ColorRGB<color_value_type> &color);
+
+    const ColorRGB<color_value_type> &getColor() const;
+
 private:
     ColorRGB<color_value_type> color{};
 
