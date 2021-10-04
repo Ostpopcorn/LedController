@@ -1,24 +1,5 @@
 #include "../include/Color.h"
 
-template<typename led_value_type>
-bool ColorBase<led_value_type>::isValidLedValue(led_value_type value) {
-    return value > 0;
-}
-
-template<typename color_value_type>
-void ColorSingle<color_value_type>::setColor(color_value_type input_color) {
-    if (isValidLedValue(input_color)) {
-        ColorSingle::red = input_color;
-    } else {
-        //Out of bounds
-    }
-}
-
-template<typename color_value_type>
-color_value_type ColorSingle<color_value_type>::getColor() const {
-    return color;
-}
-
 template<typename color_value_type>
 color_value_type ColorRGB<color_value_type>::getRed() const {
     return red;
@@ -36,7 +17,7 @@ color_value_type ColorRGB<color_value_type>::getBlue() const {
 
 template<typename led_value_type>
 void ColorRGB<led_value_type>::setRed(led_value_type input_red) {
-    if (isValidLedValue(input_red)) {
+    if (ColorBase<led_value_type>::isValidLedValue(input_red)) {
         ColorRGB::red = input_red;
     } else {
         //Out of bounds
@@ -45,7 +26,7 @@ void ColorRGB<led_value_type>::setRed(led_value_type input_red) {
 
 template<typename led_value_type>
 void ColorRGB<led_value_type>::setGreen(led_value_type input_green) {
-    if (isValidLedValue(input_green)) {
+    if (ColorBase<led_value_type>::isValidLedValue(input_green)) {
         ColorRGB::green = input_green;
     } else {
         //Out of bounds
@@ -54,7 +35,7 @@ void ColorRGB<led_value_type>::setGreen(led_value_type input_green) {
 
 template<typename led_value_type>
 void ColorRGB<led_value_type>::setBlue(led_value_type input_blue) {
-    if (isValidLedValue(input_blue)) {
+    if (ColorBase<led_value_type>::isValidLedValue(input_blue)) {
         ColorRGB::blue = input_blue;
     } else {
         //Out of bounds
@@ -74,3 +55,4 @@ template<typename color_value_type>
 ColorRGB<color_value_type>::ColorRGB(color_value_type red, color_value_type green, color_value_type blue) {
     setColor(red, green, blue);
 }
+

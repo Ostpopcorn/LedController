@@ -5,7 +5,6 @@
 #include "Coordinate.h"
 #include <cmath>
 
-
 template<typename color_value_type>
 class Animator {
 public:
@@ -26,10 +25,10 @@ public:
 
     virtual ColorRGB<color_value_type> get_color_RGB(const Coordinate &led_coordinate);
 
-    // TODO implement so these functions can be defined
-    // virtual ColorAlpha<color_value_type> get_transparency_mask(const Coordinate &led_coordinate);
 
-    // virtual ColorRGBA<color_value_type> get_color_RGBA(const Coordinate &led_coordinate);
+    virtual ColorAlpha<color_value_type> get_transparency_mask(const Coordinate &led_coordinate);
+
+    virtual ColorRGBA<color_value_type> get_color_RGBA(const Coordinate &led_coordinate);
 
     // TODO Move the concept of time to LedController, or higher. Animator should have a "offset" rather than time.
     /*
@@ -44,6 +43,7 @@ public:
     float y_scale{1.0};
 
 private:
+    // TODO Move time out to LedController, this should only know it as "offset" and time_step should be a scaling factor
     float time{0};
     float time_step{0.1};
 };
@@ -60,5 +60,7 @@ public:
 
 private:
 };
+
+#include "../src/Animator.tpp"
 
 #endif //LED_MATRIX_CONTROL_ANIMATOR_H

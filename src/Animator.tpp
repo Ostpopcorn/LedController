@@ -26,6 +26,18 @@ ColorRGB<color_value_type> Animator<color_value_type>::get_color_RGB(const Coord
     return ColorRGB<color_value_type>();
 }
 
+template<typename color_value_type>
+ColorAlpha<color_value_type> Animator<color_value_type>::get_transparency_mask(const Coordinate &led_coordinate) {
+    // Always max
+    return ColorAlpha<color_value_type>();
+}
+
+template<typename color_value_type>
+ColorRGBA<color_value_type> Animator<color_value_type>::get_color_RGBA(const Coordinate &led_coordinate) {
+    ColorRGBA<color_value_type> rgb = this->get_color_RGB(led_coordinate);
+    return ColorRGBA<color_value_type>();
+}
+
 
 template<typename color_value_type>
 ColorSingle<color_value_type> SineWaveAnimator<color_value_type>::get_color_single(const Coordinate &led_coordinate) {
