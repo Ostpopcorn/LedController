@@ -31,5 +31,8 @@ private:
 };
 
 
+};
+
+#include "../src/Led.tpp"
 
 #endif //LED_MATRIX_CONTROL_LED_H
