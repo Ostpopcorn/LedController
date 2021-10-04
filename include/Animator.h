@@ -26,6 +26,12 @@ public:
 
     virtual ColorRGB<color_value_type> get_color_RGB(const Coordinate &led_coordinate);
 
+    // TODO implement so these functions can be defined
+    // virtual ColorAlpha<color_value_type> get_transparency_mask(const Coordinate &led_coordinate);
+
+    // virtual ColorRGBA<color_value_type> get_color_RGBA(const Coordinate &led_coordinate);
+
+    // TODO Move the concept of time to LedController, or higher. Animator should have a "offset" rather than time.
     /*
      * Gets scaled current time that the animation uses.
      */
